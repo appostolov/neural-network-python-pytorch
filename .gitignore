@@ -1,0 +1,8 @@
+# Python caching (Automatically generated compiled bytecode)
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDEs and Editors
+.vscode/
