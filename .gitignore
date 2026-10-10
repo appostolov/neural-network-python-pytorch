@@ -1,8 +1,22 @@
-# Python caching (Automatically generated compiled bytecode)
+# 1. Virtual Environment (Where PyTorch and Pandas are downloaded)
+.venv/
+venv/
+env/
+
+# 2. Python compiled caches (Machine-specific system acceleration)
 **/__pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# IDEs and Editors
+# 3. Large Machine Learning models and weights (Never push large binary data)
+*.pt
+*.pth
+*.onnx
+.ipynb_checkpoints/
+
+# 4. Local OS and Editor setup files
 .vscode/
+
+# 5. Build and packaging metadata artifacts
+*.egg-info/
