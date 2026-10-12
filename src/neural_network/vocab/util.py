@@ -1,13 +1,11 @@
 import json
 import torch
 from torch import Tensor
-from pathlib import Path
+import config
 
 def text_to_tensor(text: str, max: int)->Tensor:
     text = text[:max]
-    dir = Path(__file__).parent
-    path = dir / "map.json"
-    with open(path, "r", encoding="utf-8") as file:
+    with open(config.VOCAB_JSON_PATH, "r", encoding="utf-8") as file:
         map = json.load(file)
         char_to_idx = {char: idx for idx, char in enumerate(map)}
         unk = char_to_idx.get('<UNK>', 0)
