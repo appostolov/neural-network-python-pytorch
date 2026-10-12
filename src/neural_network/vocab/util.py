@@ -1,10 +1,13 @@
 import json
 import torch
 from torch import Tensor
+from pathlib import Path
 
 def text_to_tensor(text: str, max: int)->Tensor:
     text = text[:max]
-    with open("map.json", "r", encoding="utf-8") as file:
+    dir = Path(__file__).parent
+    path = dir / "map.json"
+    with open(path, "r", encoding="utf-8") as file:
         map = json.load(file)
         char_to_idx = {char: idx for idx, char in enumerate(map)}
         unk = char_to_idx.get('<UNK>', 0)
