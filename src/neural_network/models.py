@@ -20,7 +20,8 @@ class EmailValidator(nn.Module):
                 kernel_size=5, 
                 padding=2
             ),
-            nn.ReLU()
+            nn.ReLU(),
+            nn.Dropout(p=0.3)
         )
 
         self.pool = nn.AdaptiveMaxPool1d(output_size=1)
