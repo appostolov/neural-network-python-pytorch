@@ -5,15 +5,13 @@ from torch.utils.data import Dataset
 from .vocab.util import text_to_tensor
 
 class EmailDataset(Dataset):
-    def __init__(self, csv: str, vocab: list[str], max: int):
+    def __init__(self, csv_path: str,  max_len: int):
 
-        df = pd.read_csv(csv)
-
-        vocab_dict = {char: idx for idx, char in enumerate(vocab)}
+        df = pd.read_csv(csv_path)
 
         self.features = []
         for email in df["email"]:
-            tensor = text_to_tensor(email, vocab_dict, 254)
+            tensor = text_to_tensor(email, max_len)
             self.features.append(tensor)
 
         self.features = torch.stack(self.features)
@@ -23,3 +21,7 @@ class EmailDataset(Dataset):
     def __getitem__(self, idx: int) -> tuple[Tensor, Tensor]:
         
         return self.features[idx], self.labels[idx]
+
+    def __len__(self) -> int:
+        
+        return len(self.features)
