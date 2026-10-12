@@ -4,7 +4,7 @@
 # 1. FILE SYSTEM PATHS
 # ========================================================
 # Path to your raw input data spreadsheet
-DATA_PATH = "data/emails.csv"
+DATA_PATH = "data/emails2.csv"
 
 # Where to save your final learned network parameters
 MODEL_SAVE_PATH = "src/neural_network/model_weights.pth"
