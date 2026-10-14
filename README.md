@@ -38,19 +38,7 @@ git clone https://github.com/appostolov/neural-network-python-pytorch.git
 cd neural-network-python-pytorch
 ```
 
-### 2. Activate Virtual Environment
-* **macOS / Linux:**
-  ```bash
-  python3 -m venv .venv
-  source .venv/bin/activate
-  ```
-* **Windows (CMD / PowerShell):**
-  ```cmd
-  python -m venv .venv
-  .venv\Scripts\activate
-  ```
-
-### 3. Install in Editable Development Mode
+### 32. Install in Editable Development Mode
 Execute the modern build installation directly on the root directory. This downloads `torch` and `pandas` and hooks up a live shortcut to your source files:
 ```bash
 pip install -e .
